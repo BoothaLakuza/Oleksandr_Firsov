@@ -1,0 +1,21 @@
+
+.arrow-down {
+  width: 60px;
+  height: 40px;
+  margin: 0 0 0 -30px;
+  position: absolute;
+  left: 50%;
+  bottom: 50px;
+}
+
+.left,
+.right {
+  position: absolute;
+  height: 10px;
+  width: 40px;
+  background: black;
+  border-radius: 4px;
+  top: 10px;
+  left: 10px;
+  transform-origin: 5px 50%;
+}

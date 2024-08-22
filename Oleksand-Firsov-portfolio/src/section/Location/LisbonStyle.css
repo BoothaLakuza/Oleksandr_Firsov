@@ -1,0 +1,61 @@
+.lisbon-container {
+    position: relative;
+    width: 100vh;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+.circle {
+
+    position: absolute;
+
+    z-index: 1;
+}
+
+.jesus {
+    position: absolute;
+
+    z-index: 2;
+
+}
+
+.bridge {
+    position: absolute;
+
+    z-index: 3;
+
+}
+.mountain{
+    position: absolute;
+
+    z-index: 4;
+}
+
+.waves{
+    position: absolute;
+
+    z-index: 5;
+}
+.surfer{
+    position: absolute;
+
+    z-index: 6;
+}
+
+.pin{
+    position: absolute;
+    width: 10%;
+    left: 5%;
+    top: 15%;
+    z-index: 7;
+}
+
+.lisbonName{
+    position: absolute;
+
+    left: 25%;
+    top: 20%;
+    z-index: 7;
+}
+

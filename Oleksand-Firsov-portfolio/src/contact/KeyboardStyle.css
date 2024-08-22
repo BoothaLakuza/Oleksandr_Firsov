@@ -1,0 +1,227 @@
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.wrapper {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
+  transition: 100ms ease-out;
+}
+
+label {
+  user-select: none;
+  cursor: pointer;
+  font-size: 32px;
+  position: fixed;
+  top: 4px;
+  right: 4px;
+}
+
+.keyboard {
+  --size: min(80vh, 80vw);
+  --btn-height: calc(var(--size) * .025);
+  display: flex;
+  gap: 2em;
+  font-size: calc(var(--size) * .0175);
+  background-color: #918080;
+  padding: 1em;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: perspective(800px) rotateX(75deg) rotateZ(0deg);
+}
+
+.keyboard:before,
+.keyboard:after {
+  content: "";
+  position: absolute;
+  transition: 100ms ease-out;
+}
+
+.keyboard:before {
+  width: 100%;
+  height: calc(var(--btn-height) * 1.5);
+  top: 100%;
+  left: 0;
+  background-color: #252438;
+  transform-origin: top center;
+  transform: rotateX(-90deg);
+}
+
+.keyboard:after {
+  width: calc(var(--btn-height) * 1.5);
+  height: 100%;
+  top: 0;
+  left: 100%;
+  background-color: hsl(240deg, 20%, 25%);
+  transform-origin: center left;
+  transform: rotateY(90deg);
+}
+
+.keyboard * {
+  transform-style: preserve-3d;
+}
+
+.keyboard .small p {
+  font-size: .75em;
+}
+
+.keyboard p {
+  margin: 0;
+  color: hsl(240deg, 20%, 20%);
+  font-weight: bold;
+  height: calc(var(--size) * .05);
+  min-width: calc(var(--size) * .045);
+  text-align: center;
+  padding: .25em;
+  background-color: #e9dbc8;
+  position: relative;
+  transform: translateZ(var(--btn-height));
+  transition: 100ms ease-out;
+  flex-grow: 1;
+  text-shadow: 0 0 .125em hsl(240deg, 20%, 20%);
+}
+
+.keyboard p:hover {
+  transform: translateZ(calc(var(--btn-height) * .5));
+  text-shadow: 0 0 .25em hsl(240deg, 20%, 20%);
+}
+
+.keyboard p:before,
+.keyboard p:after {
+  content: "";
+  position: absolute;
+  transition: 200ms ease-out;
+}
+
+.keyboard p:before {
+  height: var(--btn-height);
+  width: 100%;
+  top: 100%;
+  left: 0;
+  background-color: #c2a57b;
+  transform-origin: top center;
+  transform: rotateX(-90deg);
+}
+
+.keyboard p:after {
+  height: 100%;
+  width: var(--btn-height);
+  top: 0;
+  left: 100%;
+  background-color: hsl(240deg, 20%, 30%);
+  transform-origin: center left;
+  transform: rotateY(90deg);
+}
+
+.keyboard .left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+.keyboard .left .top {
+  display: flex;
+  gap: 3em;
+}
+
+.keyboard .left .fn-keys {
+  display: flex;
+  gap: 1em;
+}
+
+.keyboard .left .group {
+  display: flex;
+  gap: .25em;
+}
+
+.keyboard .left .main {
+  display: flex;
+  flex-direction: column;
+  gap: .75em;
+}
+
+.keyboard .left .main .row {
+  display: flex;
+  gap: .25em;
+}
+
+.keyboard .right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.keyboard .right .group {
+  display: flex;
+  flex-direction: column;
+  gap: .75em;
+}
+
+.keyboard .right .row {
+  display: flex;
+  gap: .25em;
+}
+
+.keyboard .right .top {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+.keyboard .right .arrows {
+  display: flex;
+  gap: .75em .25em;
+}
+
+.keyboard .right .arrows .group {
+  gap: 0;
+}
+
+.keyboard .glow {
+  background-color: hsl(240deg, 20%, 20%);
+  padding: .25em;
+}
+
+@keyframes color-shift {
+  0% {
+    --color: hsl(0deg, 100%, 50%);
+    transform: perspective(1800px) rotateX(30deg) rotateZ(40deg);
+  }
+  12.5% {
+    --color: hsl(45deg, 100%, 50%);
+  }
+  25% {
+    --color: hsl(90deg, 100%, 50%);
+  }
+  37.5% {
+    --color: hsl(135deg, 100%, 50%);
+  }
+  50% {
+    --color: hsl(180deg, 100%, 50%);
+    transform: perspective(1800px) rotateX(60deg) rotateZ(80deg);
+  }
+  62.5% {
+    --color: hsl(225deg, 100%, 50%);
+  }
+  75% {
+    --color: hsl(270deg, 100%, 50%);
+  }
+  87.5% {
+    --color: hsl(315deg, 100%, 50%);
+  }
+  100% {
+    --color: hsl(360deg, 100%, 50%);
+    transform: perspective(1800px) rotateX(30deg) rotateZ(40deg);
+  }
+}
+
+@property --color {
+  syntax: "<color>";
+  initial-value: rgb(51, 51, 51);
+  inherits: true;
+}
