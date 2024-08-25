@@ -23,6 +23,8 @@ body {
   display: flex;
   justify-content: center;
   margin: 0 auto 60px;
+  pointer-events: auto; /* This ensures that the overlay is interactive */
+
 }
 
 #root {
@@ -35,6 +37,7 @@ h1,h2,h3,p{
   color: var(--text-color);
   margin: 0;
   padding: 0;
+z-index: 1;
 }
 
 h1,h2,h3,p{
@@ -72,5 +75,39 @@ html{
 section{
   height: 100vh;
   scroll-snap-align: center;
+}
+
+
+#tiles {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  grid-template-rows: repeat(var(--rows), 1fr);
+  width: 100%; /* Use viewport width */
+  height: 100%; /* Use viewport height */
+  gap: 2.5px; /* Adjust gap as needed */
+  overflow: hidden; /* Hide overflow to ensure seamless effect */
+}
+
+.tile {
+  width: 100%; /* Full width of the grid cell */
+  height: 100%; /* Full height of the grid cell */
+  background-color: #293d5c7e; /* Default color */
+  transition: background-color 0.1s ease; /* Optional smooth transition */
+}
+.toggled {
+ 
+
+}
+
+@keyframes moveDown {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(calc(+100% )); /* Moves down by the height of the grid plus one tile */
+  }
 }
 

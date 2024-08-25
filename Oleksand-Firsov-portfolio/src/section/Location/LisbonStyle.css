@@ -1,61 +1,66 @@
 .lisbon-container {
-    position: relative;
+    position: absolute;
     width: 100vh;
     height: 100vh;
     overflow: hidden;
-}
+    margin:-12%;
+    top: 10%; /* Center vertically */
+    left: 10%; /* Center horizontally */
+    right: 10%; /* Ensure container stays within the viewport */
+    bottom: 10%; /* Ensure container stays within the viewport */}
 
 
 .circle {
 
     position: absolute;
-
+    pointer-events: none;
     z-index: 1;
 }
 
 .jesus {
     position: absolute;
-
+    pointer-events: none;
     z-index: 2;
 
 }
 
 .bridge {
     position: absolute;
-
+    pointer-events: none;
     z-index: 3;
 
 }
 .mountain{
     position: absolute;
-
+    pointer-events: none;
     z-index: 4;
 }
 
 .waves{
     position: absolute;
-
+    pointer-events: none;
     z-index: 5;
 }
 .surfer{
     position: absolute;
-
+    pointer-events: none;
     z-index: 6;
 }
 
 .pin{
     position: absolute;
     width: 10%;
-    left: 5%;
-    top: 15%;
+    left: 22%;
+    top: 22%;
     z-index: 7;
+    pointer-events: none;
 }
 
 .lisbonName{
     position: absolute;
-
-    left: 25%;
-    top: 20%;
+    pointer-events: none;
+    left: 35%;
+    top: 25%;
     z-index: 7;
 }
 

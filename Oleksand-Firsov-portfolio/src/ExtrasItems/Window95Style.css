@@ -1,0 +1,97 @@
+/* src/Window95.css */
+
+.box {
+    top: 10%;
+    width: 1000px;
+    height: 800px;
+    border-width: 8px;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    border-style: solid;
+    position: relative;
+    background: transparent; /* Make the inside area transparent */
+    box-shadow: none; /* Remove shadow effect for a clearer frame */
+    overflow: hidden;
+    z-index: 10;
+    cursor: grab;
+}
+.title {
+    height: 18px;
+    width: 100%;
+    background: #000080;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 0 2px;
+    justify-content: space-between; /* Distribute space between items */
+}
+
+.title-icon {
+    width: 14px;
+    height: 13.5px;
+}
+
+.title-text {
+    font-family: Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 11px;
+    color: white;
+    /* Remove float, as Flexbox will handle alignment */
+}
+
+.close-btn {
+    margin: 2px 2px 2px 0;
+    width: 14px;
+    height: 13.5px;
+    background: #c0c0c0;
+    border-width: 1px;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    border-style: solid;
+    padding: 0;
+    cursor: pointer;
+}
+
+.body {
+    padding: 13px 12px 12px;
+    height: 100%;
+    width: calc(100% - 26px);
+    display: inline-block;
+    position: relative;
+}
+
+.content {
+    /* Style for the normal content */
+    font-family: 'MS Sans Serif', sans-serif;
+    font-size: 11px;
+}
+
+.body button {
+    font-family: 'MS Sans Serif', sans-serif;
+    font-size: 11px;
+    outline: 1px solid #000000;
+    background: #c0c0c0;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    padding: 4px 10px;
+    margin: 20px auto 3px;
+    display: block;
+    position: relative;
+    bottom: 0;
+}
+
+/* 
+margin: 2px 2px 2px 0;
+float: right;
+width: 14px;
+height: 13.5px;
+background: #c0c0c0;
+border-width: 1px;
+border-color: #ffffff #808080 #808080 #ffffff;
+border-style: solid;
+padding: 0;
+font-size: 9px;
+font-weight: bold;
+font-family: Tahoma, sans-serif;
+text-align: center;
+cursor: pointer;
+outline: none; */
