@@ -32,8 +32,8 @@ const Contact = ({position, rotation}) => {
       <directionalLight position={[5, 5, 5]} intensity={10} />
       <directionalLight position={[-5, -5, -5]} intensity={10} />
       <directionalLight position={[0, 0, 0]} intensity={10} />
-    
-      <Model url="../../src/assets/3D models/Disquete/disk_34.glb" position={position} rotation={rotation}/>;
+
+      <Model url="../assets/3D models/Disquete/disk_34.glb" position={position} rotation={rotation}/>;
     </Canvas>
   );
 };
