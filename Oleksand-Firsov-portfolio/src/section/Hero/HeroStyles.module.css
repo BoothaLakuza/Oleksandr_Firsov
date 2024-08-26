@@ -203,6 +203,12 @@
   animation: shake 0.5s;
 }
 
+
+.emailBox{
+  font-family: 'Arial', sans-serif; /* Replace with your desired font family */
+  font-size: 18px; /* Adjust font size as needed */
+  font-weight: bold; /* Adjust font weight as needed */
+}
 @keyframes shake {
   0%, 100% { transform: translateX(0); }
   10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }

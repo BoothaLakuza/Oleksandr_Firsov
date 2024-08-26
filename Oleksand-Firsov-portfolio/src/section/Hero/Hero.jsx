@@ -1,6 +1,6 @@
 import styles from "./HeroStyles.module.css";
-import heroImg from "../../assets/hero-img.png";
-import heroImgBack from "../../assets/Design uten navn (1).png"; // The image to show on the back
+import heroImg from "../../assets/normal.png";
+import heroImgBack from "../../assets/cursed.png"; // The image to show on the back
 import themeIcon from "../../assets/sun.svg";
 import twitterIcon from "../../assets/twitter-light.svg";
 import twitterIconDark from "../../assets/twitter-dark.svg";
@@ -8,7 +8,7 @@ import githubIcon from "../../assets/github-light.svg";
 import githubIconDark from "../../assets/github-dark.svg";
 import linkedinIcon from "../../assets/linkedin-light.svg";
 import linkedinIconDark from "../../assets/linkedin-dark.svg";
-import CV from "../../assets/Sasha Firsov CV.pdf";
+import CV from "../../assets/Sasha Firsov Resume ENG.pdf";
 import { useTheme } from "../../common/ThemeContext";
 import sun from "../../assets/sun.svg";
 import moon from "../../assets/moon.svg";
@@ -114,6 +114,9 @@ function Hero() {
           <a href="https://x.com/boothalakuza" target="_blank">
             <img src={linkedinIcon} alt="LinkedIn icon" />
           </a>
+
+          <h2>Email:</h2>
+          <h2 className="emailBox">bizdalfi@gmail.com</h2>
         </span>
         <motion.p
           variants={textVariantsLeft}

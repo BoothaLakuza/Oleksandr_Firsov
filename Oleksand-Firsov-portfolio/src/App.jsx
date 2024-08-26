@@ -1,3 +1,4 @@
+import React, { useRef, useState } from "react";
 import "./App.css";
 import Hero from "./section/Hero/Hero";
 import Projects from "./projects/Projects";
@@ -16,52 +17,67 @@ import CRTScreen from "./Effects/CRTScreen";
 import "./Effects/CRTStyle.css";
 import Sega from "./projects/Sega";
 import Contact from "./contact/Contact";
-import  "./contact/ContactStyles.css";
+import "./contact/ContactStyles.css";
+
 function App() {
+  const [isWindowOSVisible, setWindowOSVisible] = useState(false);
+  const contactSectionRef = useRef(null);
+
+  const handleContactClick = () => {
+    setWindowOSVisible(!isWindowOSVisible);
+    if (contactSectionRef.current) {
+      contactSectionRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const models = [
     "../src/assets/3D models/Cartridge/Cartridge.glb",
     "../src/assets/3D models/Cartridge/Cartridge.glb",
     "../src/assets/3D models/Cartridge/Cartridge.glb",
   ];
-  const disqueteRotation = [0, 0, 0.5]; 
-  const disquetePosition = [0, -5, -80]; 
+  const disqueteRotation = [0, 0, 0.5];
+  const disquetePosition = [0, -5, -80];
   const cartridgeRadius = 10;
+
   return (
     <>
       <Grid />
       
-        <div className="curvedImage">
-          <div className="contactForm">
-         <Contact position={disquetePosition} rotation={disqueteRotation}/> 
-         </div>
-          <div className="screen">
-            <CRTScreen />
-            <div className="text">
-              <span>AV-1</span>
-              <span>AV-1</span>
-              <span>AV-1</span>
-              <span>AV-1</span>
-              <span>AV-1</span>
-            </div>
-            <div className="scanlines">
-              <div className="overlay"></div>
-            </div>
+      <div className="curvedImage">
+        <div className="contactForm" onClick={handleContactClick}>
+          <Contact position={disquetePosition} rotation={disqueteRotation} />
+        </div>
+        <div className="screen">
+          <CRTScreen />
+          <div className="text">
+            <span>AV-1</span>
+            <span>AV-1</span>
+            <span>AV-1</span>
+            <span>AV-1</span>
+            <span>AV-1</span>
+          </div>
+          <div className="scanlines">
+            <div className="overlay"></div>
           </div>
         </div>
-        <section id="HomePage">
-          <NavBar />
-          <Hero />
-        </section>
-        <section id="Location">
-          {/* <Lisbon /> */}
-          <Window95 />
-        </section>
-        <section id="Skills">
-          <h1>Projects</h1>
-          <Carousel models={models} radius={cartridgeRadius} />
-        </section>
-        <section id="Contact">Contact</section>
-      
+      </div>
+      <section id="HomePage">
+        <NavBar />
+        <Hero />
+      </section>
+      <section id="Location">
+        {/* <Lisbon /> */}
+        <Window95 />
+      </section>
+      <section id="Skills">
+        <h1>Projects</h1>
+        <Carousel models={models} radius={cartridgeRadius} />
+      </section>
+      <section id="Contact" ref={contactSectionRef}>
+        Contact
+
+        {isWindowOSVisible && <WindowOS onClose={handleContactClick} />}
+      </section>
     </>
   );
 }
