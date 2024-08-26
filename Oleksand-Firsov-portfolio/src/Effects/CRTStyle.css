@@ -1,0 +1,132 @@
+.crtBody {
+  position: fixed;
+  background: #1b2838;
+  margin: 0;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  pointer-events: none; /* Ensure clicks pass through */
+}
+
+
+@font-face {
+  src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/86186/terminal_copy.ttf);
+  font-family: 'Terminal';
+}
+
+@font-face {
+  src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/86186/sys.ttf) format('truetype');
+  font-family: 'Sys';
+}
+.curvedImage{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/86186/crt.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  content: "";
+  z-index: 1010;
+  pointer-events: none; /* Ensure clicks pass through */
+
+}
+
+.screen {
+  opacity: 0.2;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  right: 0;
+  pointer-events: none; /* Ensure clicks pass through */
+  z-index: 1000;
+}
+
+
+.scanlines .overlay {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none; /* Ensure clicks pass through */
+  z-index: 1001;
+
+} 
+.scanlines .overlay::after,
+.scanlines .overlay::before {
+  pointer-events: none; /* Ensure clicks pass through */
+}
+.scanlines .overlay::after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/86186/crt.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  content: "";
+  z-index: 1002;
+}
+
+.scanlines .overlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+      rgba(18, 16, 16, 0) 50%, 
+      rgba(18, 16, 16, 0.432) 50%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 0, 0, 0.363),
+      rgba(0, 255, 0, 0.205),
+      rgba(0, 0, 255, 0.336)
+    );
+  background-size: 100% 2px, 3px 100%;
+
+  pointer-events: none;
+  z-index: 1003;
+} 
+
+.text {
+  color: lime;
+  font-family: 'Sys';
+  font-size: 6vmin;
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  width: 200px;
+  text-shadow: 0 0 3px lime;
+  filter: blur(0.5px);
+  pointer-events: none; /* Ensure clicks pass through */
+
+}
+
+.text span {
+  animation: blur 30ms infinite, jerk 50ms infinite;
+  filter: blur(1px);
+  position: absolute;
+  pointer-events: none; /* Ensure clicks pass through */
+
+}
+
+@keyframes blur {
+  0% { filter: blur(1px); opacity: 0.8; }
+  50% { filter: blur(1px); opacity: 1; }
+  100% { filter: blur(1px); opacity: 0.8; }
+}
+
+@keyframes jerk {
+  50% { transform: translateX(1px); }
+  51% { transform: translateX(0); }
+}
