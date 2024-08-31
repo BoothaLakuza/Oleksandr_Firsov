@@ -8,7 +8,7 @@ function Model({ url, position, rotation }) {
 }
 
 const Sega = ({ position, rotation }) => {
-  return <Model url="../assets/3D models/SEGA/SegaModel.glb" position={position} rotation={rotation} />;
+  return <Model url="../../src/assets/3D models/SEGA/SegaModel.glb" position={position} rotation={rotation} />;
 };
 
 export default Sega;
